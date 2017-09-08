@@ -1,0 +1,110 @@
+.sec-4 {
+	padding-top: 10vh;
+	padding-bottom: 10vh;
+	color: $white;
+
+	@media all and (min-width: 769px) {
+		padding-top: calc(10vh + 96px);
+		padding-bottom: 96px;
+	}
+
+	h2 {
+		margin-bottom: 96px;
+		display: flex;
+
+		span {
+			& + span {
+				margin-left: 48px;
+				position: relative;
+				&:before {
+					content: '';
+					width: 8px;
+					height: 8px;
+					border-radius: 50%;
+					background: $white;
+					position: absolute;
+					left: -28px;
+					top: calc(50% - 5px);
+				}
+			}
+		}
+
+		@media all and (max-width: 768px) {
+			flex-direction: column;
+			margin-bottom: 48px;
+
+			span {
+				& + span {
+					margin: 16px 0 0;
+
+					&:before {
+						display: none;
+					}
+				}
+				&:nth-child(2) {
+					margin-left: 48px;
+				}
+
+				&:nth-child(3) {
+					margin-left: 96px;
+				}
+			}
+		}
+
+		@media all and (max-width: 350px) {
+			span {
+				& + span {
+					margin: 16px 0 0;
+
+					&:before {
+						display: none;
+					}
+				}
+				&:nth-child(2) {
+					margin-left: 16px;
+				}
+
+				&:nth-child(3) {
+					margin-left: 32px;
+				}
+			}
+		}
+	}
+}
+
+.services {
+	&-list {
+		display: flex;
+
+		& + & {
+			margin-top: 32px;
+		}
+
+		@media all and (max-width: 768px) {
+			flex-wrap: wrap;
+			margin-top: 64px;
+			
+			> :nth-child(n + 3) {
+				margin-top: 32px;
+			}
+		}
+	}
+	&-icon {
+		margin-bottom: 24px;
+
+		&-image {
+			fill: $white;
+			max-width: 64px;
+			max-height: 64px;
+		}
+	}
+	&-block {
+		height: 100%;
+		text-align: center;
+		padding: 0 6px;
+	}
+	&-text {
+		font-size: $font-smaller;
+		font-family: $sans-serif;
+	}
+}

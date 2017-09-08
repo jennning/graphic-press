@@ -1,0 +1,77 @@
+.sec-7 {
+	padding-top: 10vh;
+	padding-bottom: 10vh;
+	background: $gray-dark;
+	color: $white;
+	overflow: hidden;
+
+	&__title {
+		margin-bottom: 48px;
+	}
+
+	&__background {
+		width: calc(100% + 60px);
+		height: calc(100% + 60px);
+		position: absolute;
+		top: -30px;
+		left: -30px;
+		background: url(../images/atf-bg-1.jpg) center/cover no-repeat;
+		z-index: 0;
+		opacity: .1;
+		will-change: transform;
+
+		&.resetting {
+			transition: transform 0.3s ease;
+		}
+	}
+
+	h4 {
+		margin: 32px auto;
+	}
+
+	h3 {
+		margin: 0;
+		font-size: 1.5rem;
+
+		& + h3 {
+			margin-top: 32px;
+		}
+	}
+
+	&__text {
+		padding: 32px 16px 0;
+	}
+
+	@media all and (min-width: 769px) {
+		padding-top: calc(10vh + 128px);
+		padding-bottom: 128px;
+
+		&__title {
+			margin-bottom: 96px;
+		}
+
+		&__text {
+			padding: 48px;
+		}
+	}
+}
+
+.client-list {
+	li {
+		display: inline-block;
+		margin-left: 32px;
+		font-size: $font-smaller;
+		position: relative;
+
+		&:before {
+			content: '';
+			width: 4px;
+			height: 4px;
+			background: $white;
+			border-radius: 50%;
+			position: absolute;
+			left: -20px;
+			top: calc(50% - 2px);
+		}
+	}
+}

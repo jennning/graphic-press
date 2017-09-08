@@ -1,0 +1,12 @@
+{
+  "name": "gpg",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "owl.carousel": "^2.2.1"
+  },
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2"
+  }
+}

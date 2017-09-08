@@ -1,0 +1,89 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Graphic Press | Login</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans" rel="stylesheet">
+    <!-- build:css /styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <header class="header" id="header">
+        <div class="header__container container">
+            <div class="header-logo show" id="header_logo">
+                <div class="header-logo__image">
+                    <img src="images/gpg-logo.png" alt="logo">
+                </div>
+                <div class="header-logo__text"><a href="/">GPG</a></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="login" id="login">
+		<div class="login-background"></div>
+		<div class="login__container">
+			<div class="login__header">
+				<h1>LOGIN</h1><span> AS</span>
+			</div>
+			<div class="login__subheader">
+				<div class="row">
+					<div class="col-xs-6">
+						<input type="radio" name="login_as" id="login_as_1" value="supplier" checked>
+						<label for="login_as_1">SUPPLIER</label>
+						<div class="login-indicator"></div>
+					</div>
+					<div class="col-xs-6">
+						<input type="radio" name="login_as" id="login_as_2" value="admin">
+						<label for="login_as_2">ADMIN</label>
+						<div class="login-indicator"></div>
+					</div>
+				</div>
+			</div>
+			<div class="login__body">
+				<div class="form-control-block">
+					<input class="form-control" type="text" name="username" id="login_username">
+					<label class="form-control-label" for="login_username">
+						ACCOUNT ID
+					</label>
+					<div class="form-control-indicator"></div>
+				</div>
+				<div class="form-control-block">
+					<input class="form-control" type="password" name="password" id="login_password">
+					<label class="form-control-label" for="login_password">
+						PASSWORD
+					</label>
+					<div class="form-control-indicator"></div>
+				</div>
+				<button class="btn">
+					<span>LOGIN</span>
+				</button>
+			</div>
+		</div>
+    </main>
+
+	<footer class="footer">
+		&copy; <span id="current_year">2017</span> GRAPHIC PRESS SDN BHD (Co. No. 30453-P) <span class="footer-disclaimer">ALL RIGHTS RESERVED</span>
+	</footer>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/owl.carousel/dist/owl.carousel.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js /scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

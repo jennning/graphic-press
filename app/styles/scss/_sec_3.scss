@@ -1,0 +1,87 @@
+.sec-3 {
+	padding-top: 48px;
+	padding-bottom: 48px;
+	position: relative;
+	background: $white;
+	z-index: 2;
+
+	.section-title {
+		margin-bottom: 64px;
+	}
+
+	&__block {
+		padding: 0 32px;
+
+		& + & {
+			margin-top: 32px;
+
+			@media all and (min-width: 769px) {
+				margin-top: 64px;
+			}
+		}
+
+		h3, h4 {
+			margin: 0 auto 16px;
+			line-height: 1.8;
+		}
+
+		@media all and (max-width: 350px) {
+			padding: 0 16px;
+		}
+	}
+
+	&:before {
+		content: '';
+		top: 0;
+		transform: skewY(-5deg);
+		transform-origin: left top;
+		box-shadow: 0 -10px 10px 1px rgba(0, 0, 0, 0.1);
+	}
+
+	&:before, &__background {
+		height: 50%;
+		width: 100%;
+		position: absolute;
+		z-index: 1;
+		background: $white;
+	}
+
+	&__background {
+		bottom: 0;
+		transform: skewY(5deg);
+		transform-origin: left bottom;
+		box-shadow: 0 10px 10px 1px rgba(0, 0, 0, 0.1);
+
+		.cmyk-blocks {
+			left: 60px;
+			transform: skewY(-5deg) rotate(5deg);
+		}
+	}
+
+	&-mission {
+		@media all and (max-width: 768px) {
+			margin-bottom: 32px;
+		}
+		.sec-3__block:last-child {
+			@media all and (max-width: 768px) {
+				display: none;
+			}
+		}
+	}
+
+	&-vision {
+		&-points {
+			> :first-child {
+				display: none;
+			}
+
+			@media all and (max-width: 768px) {
+				margin-top: 32px;
+
+				> :first-child {
+					display: block;
+				}
+			}
+		}
+	}
+}
