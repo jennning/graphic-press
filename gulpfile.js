@@ -1,3 +1,5 @@
+"use strict"
+
 // generated on 2017-06-25 using generator-webapp 3.0.1
 const gulp = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
@@ -5,6 +7,7 @@ const browserSync = require('browser-sync').create();
 const del = require('del');
 const wiredep = require('wiredep').stream;
 const runSequence = require('run-sequence');
+const debug = require('gulp-debug');
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -166,12 +169,12 @@ gulp.task('wiredep', () => {
 });
 
 gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
-  return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
+  return gulp.src('dist/**/*').pipe(debug({title: 'unicorn:'})).pipe($.size({title: 'build', gzip: true}));
 });
 
 gulp.task('default', () => {
   return new Promise(resolve => {
-    dev = false;
+    dev = true;
     runSequence(['clean', 'wiredep'], 'build', resolve);
   });
 });

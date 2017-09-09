@@ -162,16 +162,13 @@
 			opacity: 1;
 		}
 
-		h5, p {
-			margin: 0;
-		}
-		h5 {
-			font-size: $font-small;
-			font-weight: bold;
-			margin-bottom: 8px;
-		}
 		p {
+			margin: 0;
 			font-size: $font-smaller;
+
+			span {
+				font-family: $sans-serif;
+			}
 		}
 	}
 }

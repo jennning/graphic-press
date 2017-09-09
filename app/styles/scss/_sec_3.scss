@@ -25,6 +25,10 @@
 			line-height: 1.8;
 		}
 
+		a {
+			color: $red;
+		}
+
 		@media all and (max-width: 350px) {
 			padding: 0 16px;
 		}

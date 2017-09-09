@@ -56,6 +56,7 @@ function cssTransform($el, transform_css) {
 }
 
 var $w = $(window),
+	$d = $(document),
 	page = ['home', 'login'];
 
 function initPage() {
@@ -91,6 +92,7 @@ $(function() {
 		$('#journey').owlCarousel({
 			autoplay: true,
 			autoplaySpeed: 3000,
+			autoplayHoverPause: true,
 			mouseDrag: false,
 			touchDrag: false,
 			dots: true,
@@ -171,12 +173,12 @@ $(function() {
 
 		if($container.hasClass(show_c)) {
 			$container.removeClass(show_c);
-			$(document).off('click');
+			$d.off('click');
 		} else {
 			$container.addClass(show_c);
 			e.stopPropagation();
 
-			$(document).on('click', function(e) {
+			$d.on('click', function(e) {
 				if(!$container[0].contains(e.target)) {
 					$lang_selector.click();
 				}
@@ -200,13 +202,13 @@ if(page.home) {
 		// equipment scroll
 		$start = $('#products_services'),
 		$end = $('#our_equipments'),
-		z_start_p = $start.position().top,
-		z_end_p = $end.position().top + $end.innerHeight(),
-		z_dist = z_end_p - z_start_p,
+		z_start_p,
+		z_end_p,
+		z_dist,
 		$z = $('#equipment_background'),
 		max_zoom_v = parseFloat('1.1'),
 		zoom_v,
-		calcZoom = function(p) {
+		calcZoom = function(p) {;
 			return (p - z_start_p) / z_dist * (max_zoom_v - 1) + 1;
 		},
 		setZoom = function(z) {
@@ -216,6 +218,12 @@ if(page.home) {
 				cssTransform($z, v);
 			});
 		};
+
+	$d.ready(function() {
+		z_start_p = $start.position().top;
+		z_end_p = $end.position().top + $end.innerHeight();
+		z_dist = z_end_p - z_start_p;
+	});
 
 	$w.scroll(function() {
 		var w_pos = this.scrollY,
@@ -244,9 +252,9 @@ if(page.home) {
 	});
 
 	var company_value_arr = [
-			'In effectiveness we serve.',
-			'In efficiency we deliver.',
-			'In excellence we achieve.'
+			'In effectiveness we deliver.',
+			'In efficiency we strive.',
+			'In excellence we commit.'
 		],
 		swapTimer = 3000,
 		$company_value = $('#company_value'),
@@ -287,7 +295,7 @@ if(page.home) {
 		}, 300);
 	}
 
-	$(document).ready(function() {
+	$d.ready(function() {
 		var callInitLanding = function(d) {
 			var f = d && d.hasFocus()? true : false;
 
@@ -328,7 +336,7 @@ if(page.home) {
 			return;
 		}
 
-		$(document).on('mousemove',function(e) {
+		$d.on('mousemove',function(e) {
 			mouse.x = e.clientX;
 			mouse.y = e.clientY;
 		});
@@ -340,7 +348,7 @@ if(page.home) {
 		move_background = false;
 		hover_f = 0;
 
-		$(document).unbind('mousemove');
+		$d.unbind('mousemove');
 
 		$sec_7_background.addClass(reset_c);
 
